@@ -1,0 +1,62 @@
+.table{overflow-x: auto;}
+.table.table-hover{cursor:pointer}
+.form-control{line-height: 1 !important;}
+/* .card-management .table td .form-control {width: 65%;} */
+
+.control-label:after {
+    content: " *";
+    color: #da0000;
+}
+
+
+.my-form.fv-plugins-bootstrap .fv-help-block {
+      color: #f39c12;
+  }
+  .my-form.fv-plugins-bootstrap .has-danger .fv-plugins-icon {
+      color: #f39c12;
+  }
+  .my-form.fv-plugins-bootstrap .has-success .fv-plugins-icon {
+      color: #18bc9c;
+  }
+  .fv-plugins-icon{
+  display: none;
+  }
+  .fv-plugins-message-container{
+  color: red;
+  }
+
+.select2-container .select2-selection--single {
+    height: calc(1.5em + .75rem + 2px) !important;
+    padding: .375rem .75rem !important;
+    border: 1px solid #d1d3e2 !important;
+    padding-left: 11px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: calc(1.5em + .75rem + 2px) !important;
+    padding: .375rem .75rem !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 25px !important;
+}
+
+label {
+    /* display: inline-block;
+    margin-bottom: .5rem; */
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+}
+span.badge.badge-danger.sidebar-request-counter{
+    display: none;
+    position: absolute;
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+    -webkit-transform-origin: top right;
+    margin-top: 0.4rem;
+    
+}
+

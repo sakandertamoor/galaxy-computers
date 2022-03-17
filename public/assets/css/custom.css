@@ -59,4 +59,19 @@ span.badge.badge-danger.sidebar-request-counter{
     margin-top: 0.4rem;
     
 }
+.sidebar .nav-item .nav-link span {
+    font-size: 0.85rem;
+    display: inline;
+    font-size: large;
+  }
+  .sidebar .nav-item .nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  width: 15rem;
+}
+.sidebar {
+  width: 15rem!important;
+ }
 

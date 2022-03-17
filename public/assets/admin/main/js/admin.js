@@ -82,7 +82,7 @@ function getAllNotification()
     });
 }
 
-setInterval(function(){
-      getAllNotification();
-    },
- 1000);
+// setInterval(function(){
+//       getAllNotification();
+//     },
+//  1000);

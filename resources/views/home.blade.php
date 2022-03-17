@@ -1,13 +1,6 @@
 @extends('admin-layouts.admin_master')
 @push('title')
-    <title>ENGTEC</title>
-@endpush
-@push('styles')
-    <style>
-        .list-body {
-
-        }
-    </style>
+    <title>Galaxy Computers</title>
 @endpush
 @push('content')
     <div class="row mb-3">

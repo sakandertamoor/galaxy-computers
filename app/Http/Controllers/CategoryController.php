@@ -50,8 +50,15 @@ class CategoryController extends Controller
        return redirect('allCategory')->with('Success', 'Category has been created successfully.');
     }
 
-    public function edit(Request $request)
+    public function edit($id)
     {
-       print_r('here');
+        $category = Category::find($id);
+        return view('category.edit', compact('category'));
     }
+    public function update(StoreCategoryRequest $request)
+    {
+       $category = Category::create($request->validated());
+       return redirect('allCategory')->with('Success', 'Category has been created successfully.');
+    }
+    
 }

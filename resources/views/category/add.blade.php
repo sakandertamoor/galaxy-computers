@@ -9,7 +9,6 @@
 @endpush
 @push('content')
     <div class="row">
-
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
@@ -33,7 +32,7 @@
                                 <input id="category_name" type="text"
                                        class="form-control @error('category_name') is-invalid @enderror" name="category_name"
                                        value="{{ old('category_name') }}"  autocomplete="category_name" autofocus
-                                       placeholder="Category Name">
+                                       placeholder="Category Name" >
 
                                 @error('category_name')
                                 <span class="invalid-feedback" role="alert">
@@ -46,7 +45,7 @@
                             <img src="" id="blah" class="w-100 pb-2 ml-0" style="max-width: 100px">
                         </div>
 
-                        <button type="submit" style="float: right" class="btn btn-primary ">Save</button>
+                        <button type="submit" name="submitButton" style="float: right" class="btn btn-primary ">Save</button>
 
                     </form>
                 </div>
@@ -56,6 +55,6 @@
 
 @endpush
 @push('scripts')
-   <script src="{{asset('/assets/custom/category/add.js')}}"></script>
+<script src="{{asset('/assets/custom/category/add.js')}}"></script>
 @endpush
 

@@ -78,6 +78,7 @@
 
   <!-- bottom script -->
    @include('layouts.bottom_scripts')
+   @stack('scripts')
   <!-- / end of bottom script -->
 
 </body>

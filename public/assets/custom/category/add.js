@@ -1,9 +1,9 @@
 // Add the following code if you want the name of the file appear on select
 // formvalidation.io
-
+$(document).ready(function () {
 document.addEventListener('DOMContentLoaded', function (e) {
     const fv = FormValidation.formValidation(
-        document.getElementById('category_name'),
+        document.getElementById('category_form'),
         {
             fields: {
                 category_name: {
@@ -34,4 +34,5 @@ document.addEventListener('DOMContentLoaded', function (e) {
     );
 
     
+});
 });

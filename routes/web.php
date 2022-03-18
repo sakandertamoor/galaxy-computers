@@ -22,6 +22,6 @@ Route::controller(CategoryController::class)->group( function(){
     Route::get('/addCategory','create')->name('addCategory');
     Route::get('/allCategory','index')->name('Category');
     Route::post('/storeCategory','store')->name('storeCategory');
-    Route::get('/storeCategory/{id}','edit')->name('editCategory');
+    Route::get('/editCategory/{id}','edit')->name('editCategory');
     //Route::get('/storeCategory/{id}','edit')->name('editCategory');
 });

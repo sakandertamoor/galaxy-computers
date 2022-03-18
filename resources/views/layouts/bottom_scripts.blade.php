@@ -11,7 +11,6 @@
 <script src="{{asset('/assets/select2/select2.min.js')}}">></script>  
 
 <!-- formvalidation.io-->
-<script src="{{asset('/assets/formvalidation/dist/js/FormValidation.js')}}"></script>
 <script src="{{asset('/assets/formvalidation/dist/js/FormValidation.min.js')}}"></script>
 <script src="{{asset('/assets/formvalidation/dist/js/plugins/Bootstrap.min.js')}}">></script>
 <script src="{{asset('/assets/admin/main/js/admin.js')}}">></script>

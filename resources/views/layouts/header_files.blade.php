@@ -11,5 +11,4 @@
 <link href="{{asset('/assets/select2/select2.min.css')}}" rel="stylesheet">
 
 <!-- formvalidation.io -->
-<link href="{{asset('/assets/formvalidation/dist/css/formValidation.css')}}">
 <link href="{{asset('/assets/formvalidation/dist/css/formValidation.min.css')}}">

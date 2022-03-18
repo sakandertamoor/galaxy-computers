@@ -5,7 +5,7 @@
 
         <div class="sidebar-brand-text mx-3">
           <img src="{{asset('/assets/img/logo.png')}}" alt="" width="100%">
-          <!--<sup>2</sup>-->
+
         </div>
       </a>
       <!-- Divider -->
@@ -21,25 +21,25 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#projectmodule" aria-expanded="true"
-          aria-controls="projectmodule">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categorymodule" aria-expanded="true"
+          aria-controls="categorymodule">
           <i class="fas fa-fw fa-folder"></i>
           <span>Category</span>
         </a>
-        <div id="projectmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="categorymodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href=" ">Add Category</a>
-            <a class="collapse-item" href=" ">All Category</a>
+            <a class="collapse-item" href="{{route('addCategory')}}">Add Category</a>
+            <a class="collapse-item" href="{{route('Category')}}">All Category</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#employeemodule" aria-expanded="true"
-          aria-controls="employeemodule">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#projectmodule" aria-expanded="true"
+          aria-controls="projectmodule">
           <i class="fas fa-fw fa-folder"></i>
           <span>Project</span>
         </a>
-        <div id="employeemodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="projectmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="">Add Project</a>
             <a class="collapse-item" href="">All Project</a>
@@ -47,12 +47,12 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#managermodule" aria-expanded="true"
-          aria-controls="managermodule">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#invoicemodule" aria-expanded="true"
+          aria-controls="invoicemodule">
           <i class="fas fa-fw fa-folder"></i>
           <span>Invoices</span>
         </a>
-        <div id="managermodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="invoicemodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="">Add Invoices</a>
             <a class="collapse-item" href="">All Invoices</a>

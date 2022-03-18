@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //
 
-    public function store(Request $request)
+    public function create()
+    {
+        return view('category.add');
+        
+    }
+    public function index(Request $request)
     {
         
         
+    }
+    public function store(Request $request)
+    {
+        print_r($request->category_name);
     }
 }

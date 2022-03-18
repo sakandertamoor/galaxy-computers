@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,12 @@ use App\Http\Controllers\HomeController;
 
 Route::controller(HomeController::class)->group( function(){
     Route::get('/','home');
+});
+
+Route::controller(CategoryController::class)->group( function(){
+    Route::get('/addCategory','create')->name('addCategory');
+    Route::get('/allCategory','index')->name('Category');
+    Route::post('/storeCategory','store')->name('storeCategory');
+    Route::get('/storeCategory/{id}','edit')->name('editCategory');
+    //Route::get('/storeCategory/{id}','edit')->name('editCategory');
 });

@@ -47,7 +47,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
        $category = Category::create($request->validated());
-       return redirect('allCategory')->with('Success', 'Category has been created successfully.');
+       return redirect('allCategory')->with('success', 'Category has been created successfully.');
     }
 
     public function edit($id)
@@ -57,8 +57,8 @@ class CategoryController extends Controller
     }
     public function update(StoreCategoryRequest $request)
     {
-       $category = Category::create($request->validated());
-       return redirect('allCategory')->with('Success', 'Category has been created successfully.');
+       //$category = Category::create($request->validated());
+      // return redirect('allCategory')->with('success', 'Category has been created successfully.');
     }
     
 }

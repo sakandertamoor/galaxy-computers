@@ -31,7 +31,6 @@
 @endpush
 @push('scripts')
     <script type="text/javascript">
-        const asset_path = "{{ asset('') }}";
         const category_datatable_path = "{{ route('Category') }}";
         const csrf_token = '{{ csrf_token() }}';
     </script>

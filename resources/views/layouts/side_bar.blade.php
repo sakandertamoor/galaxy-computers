@@ -20,11 +20,25 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clientmodule" aria-expanded="true"
+          aria-controls="clientmodule">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Clients</span>
+        </a>
+        <div id="clientmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{route('addClient')}}">Add Client</a>
+            <a class="collapse-item" href="{{route('Client')}}">All Client</a>
+          </div>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categorymodule" aria-expanded="true"
           aria-controls="categorymodule">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Category</span>
+          <span>Categories</span>
         </a>
         <div id="categorymodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">

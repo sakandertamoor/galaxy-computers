@@ -20,3 +20,24 @@ if (!function_exists('categoryTable')) {
                     ->make(true);
     }
 }
+
+
+if (!function_exists('clientTable')) {
+    function clientTable($client)
+    {
+        return datatables($client)
+                ->setRowClass('clickable-row')
+                    ->setRowAttr([
+                        'data-href' => function($client){
+                            return route('editClient', $client->id);
+                        }
+                        ])
+                    ->addColumn('full_name', function($client){
+                          return $client->first_name." ". $client->last_name;
+                     })
+                    ->addColumn('payment', function($client){
+                        return "0";
+                   })
+                    ->make(true);
+    }
+}

@@ -1,13 +1,15 @@
 $(function () {
 
-    var table = $('#category_table').DataTable({
+    var table = $('#client_table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: category_datatable_path,
+        ajax: client_datatable_path,
         columns: [
             {data: 'id', 'class': 'clickable'}, // for serial Number
-            {data: 'category_name', 'class': 'clickable'},
-            {data: 'status', 'class': 'clickable'},
+            {data: 'full_name', 'class': 'clickable'},
+            {data: 'email', 'class': 'clickable'},
+            {data: 'address', 'class': 'clickable'},
+            {data: 'payment', 'class': 'clickable'},
             // {data: 'action', orderable: false, searchable: false},
         ],
         order: [[0, 'desc']],

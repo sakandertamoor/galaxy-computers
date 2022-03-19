@@ -23,7 +23,7 @@
                 <div class="card-body">
 
                     <form method="POST" enctype="multipart/form-data" id="category_form"
-                          action="{{url('editCategory/'.$category->id)}}">
+                          action="{{url('updateCategory')}}">
                         @csrf
                         @method('put')
 
@@ -42,6 +42,24 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="">{{ __('Status') }}</label>
+                            <div class="">
+                                <select id="status" type="text"
+                                        class="form-control @error('status') is-invalid @enderror" name="status"
+                                        value="{{ old('status') }}" required autocomplete="status" autofocus>
+                                    <option value="1" @if(@$category->status==true) selected   @endif>Active</option>
+                                    <option value="0" @if(@$category->status==false) selected   @endif>Inactive</option>
+                                </select>
+
+                                @error('status')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" id="id" value="{{$category->id}}">
                         <button type="submit" style="float: right" class="btn btn-primary ">Update</button>
 
                     </form>

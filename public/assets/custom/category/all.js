@@ -8,7 +8,7 @@ $(function () {
             {data: 'id', 'class': 'clickable'}, // for serial Number
             {data: 'category_name', 'class': 'clickable'},
             {data: 'status', 'class': 'clickable'},
-            {data: 'action', orderable: false, searchable: false},
+            // {data: 'action', orderable: false, searchable: false},
         ],
         order: [[0, 'desc']],
         "pageLength": 100

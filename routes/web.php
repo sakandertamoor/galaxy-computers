@@ -23,5 +23,5 @@ Route::controller(CategoryController::class)->group( function(){
     Route::get('/allCategory','index')->name('Category');
     Route::post('/storeCategory','store')->name('storeCategory');
     Route::get('/editCategory/{id}','edit')->name('editCategory');
-    Route::put('/updateCategory/{id}','update')->name('updateCategory');
+    Route::put('/updateCategory','update')->name('updateCategory');
 });

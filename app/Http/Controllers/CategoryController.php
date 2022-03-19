@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategoryRequest;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
-use Yajra\DataTables\Facades\DataTables;
 
 
 class CategoryController extends Controller
 {
-
     public function create()
     {
         return view('category.add');
@@ -18,31 +17,12 @@ class CategoryController extends Controller
     }
     public function index(Request $request)
     {
-    
         if ($request->ajax())
          {
-            $category = Category::orderBy('id')->get();
-            return datatables($category)
-                ->setRowClass('clickable-row')
-                    ->setRowAttr([
-                        'data-href' => function($category){
-                            return route('editCategory', $category->id);
-                        }
-                        ])
-                    ->addColumn('status', function($category){
-                          return '<span class="badge badge-success">Active</span>';
-                     })
-                    ->addColumn('action', function ($category) {
-                        
-                        return "<button class='btn btn-sm btn-danger' id='suspend-btn' title='make it suspend' data-action='suspend' data-id='{$category->id}'><i class='fa fa-trash'></i></button>";
-                        
-                    })
-                    ->rawColumns(['status', 'action'])
-                    ->make(true);
+            $category = Category::all();
+            return categoryTable($category);
         }
-
         return view('category.all');
-        
     }
     public function store(StoreCategoryRequest $request)
     {
@@ -55,10 +35,24 @@ class CategoryController extends Controller
         $category = Category::find($id);
         return view('category.edit', compact('category'));
     }
-    public function update(StoreCategoryRequest $request)
+    public function update(Request $request)
     {
-       //$category = Category::create($request->validated());
-      // return redirect('allCategory')->with('success', 'Category has been created successfully.');
+        $validator = Validator::make($request->all(), [
+            'category_name' => 'required',
+            'status' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+     $result = Category::where('id', $request->id)->update(
+         [
+            'category_name' => $request->category_name,
+            'status' => $request->status,
+         ]
+    );
+      return  $result ? redirect('allCategory')->with('success', 'Category has been Updated successfully.') : redirect('allCategory')->with('error', 'Something went Wrong.');
     }
     
 }

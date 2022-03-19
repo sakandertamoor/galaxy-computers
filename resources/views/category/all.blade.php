@@ -19,7 +19,7 @@
                     <th>Sr.No</th>
                     <th>Category</th>
                     <th>Status</th>
-                    <th>Action</th>
+                   
                 </tr>
                 </thead>
             </table>

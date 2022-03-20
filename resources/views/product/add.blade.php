@@ -22,18 +22,18 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" id="Product_form"
-                          action="">
+                          action="{{ route('storeProduct') }}">
                         @csrf
 
                         <div class="form-group">
-                            <label class="control-label">{{ __('Name') }}</label>
+                            <label class="control-label">{{ __(' Product Name') }}</label>
                             <div class="">
-                                <input id="product_name" type="text"
-                                       class="form-control @error('product_name') is-invalid @enderror" name="product_name"
-                                       value="{{ old('product_name') }}"  autocomplete="product_name" autofocus
-                                       placeholder="Frist Name" >
+                                <input id="name" type="text"
+                                       class="form-control @error('name') is-invalid @enderror" name="name"
+                                       value="{{ old('name') }}"  autocomplete="name" autofocus
+                                       placeholder="Name" >
 
-                                @error('product_name')
+                                @error('name')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -42,14 +42,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label">{{ __('Last Name') }}</label>
+                            <label class="control-label">{{ __('Stock Quantity') }}</label>
                             <div class="">
-                                <input id="last_name" type="text"
-                                       class="form-control @error('last_name') is-invalid @enderror" name="last_name"
-                                       value="{{ old('last_name')  }}" autocomplete="last_name" 
-                                       placeholder="Last Name">
+                                <input id="quantity" type="text"
+                                       class="form-control @error('quantity') is-invalid @enderror" name="quantity"
+                                       value="{{ old('quantity')  }}" autocomplete="quantity" 
+                                       placeholder="Quantity">
 
-                                @error('last_name')
+                                @error('quantity')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -57,9 +57,40 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="control-label">{{ __('Category') }}</label>
+                            <div class="">
+                                <select id="category" type="text"
+                                        class="form-control select2-dropdown @error('category') is-invalid @enderror"
+                                        name="category"
+                                        value="{{ old('category') }}" required autocomplete="category" autofocus>
+
+                                        @foreach($categories as $category)
+                                        <option value="{{$category->id}}"> {{$category->category_name}} </option>
+                                        @endforeach
+                                </select>
+
+                                @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <label class="">Product Image</label><br/>
+                        <div class="form-group custom-file mb-3">
+                            <input type="file" class="custom-file-input" onchange="readURL(this)" id="customFile"
+                                   name="image" accept="image/*">
+                            <label class="custom-file-label" for="image">Choose file</label>
+
+                            @error('image')
+                            <strong class="fv-help-block"><span>Image must be PNG/JPG</span></strong>
+                            @enderror
+                        </div>
                        
                         <div>
-                            <img src="" id="blah" class="w-100 pb-2 ml-0" style="max-width: 100px">
+                            <img src="" id="viewimage" class="w-100 pb-2 ml-0" style="max-width: 100px">
                         </div>
 
                         <button type="submit" name="submitButton" style="float: right" class="btn btn-primary ">Save</button>
@@ -72,6 +103,8 @@
 
 @endpush
 @push('scripts')
-<script src="{{asset('/assets/custom/client/add.js')}}"></script>
+
+<script src="{{asset('/assets/select2/select2.min.js')}}"></script>  
+<script src="{{asset('/assets/custom/product/add.js')}}"></script>
 @endpush
 

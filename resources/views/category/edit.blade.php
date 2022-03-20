@@ -70,6 +70,6 @@
 
 @endpush
 @push('scripts')
-   <script src="{{asset('assets/custom/category/edit.js')}}"></script>
+   <script src="{{asset('assets/custom/category/add.js')}}"></script>
 @endpush
 

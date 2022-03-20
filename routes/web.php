@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +34,12 @@ Route::controller(ClientController::class)->group( function(){
     Route::get('/allClient','index')->name('Client');
     Route::get('/client/{client}/edit','edit')->name('editClient');
     Route::put('/updateClient/{client}','update')->name('updateClient');
+});
+
+Route::controller(ProductController::class)->group( function(){
+    Route::get('/addProduct','create')->name('addProduct');
+    // Route::post('/storeClient','store')->name('storeClient');
+    // Route::get('/allClient','index')->name('Client');
+    // Route::get('/client/{client}/edit','edit')->name('editClient');
+    // Route::put('/updateClient/{client}','update')->name('updateClient');
 });

@@ -34,11 +34,10 @@ class ClientController extends Controller
          $client = Client::find($client);
          return view('client.edit', compact('client'));
     }
-    public function update(Client $client)
+    public function update(Client $client, StoreClientRequest $request)
     {
-        print_r($client->id);
-        // $client = Client::update($client);
-         //return redirect('allClient')->with('success', 'Client has been Updated successfully.');
+        $result = Client::where('id', $client->id)->update($request->validated());
+        return  $result ? redirect('allClient')->with('success', 'Client has been Updated successfully.') : redirect('allClient')->with('error', 'Something went Wrong.');
     }
 
 }

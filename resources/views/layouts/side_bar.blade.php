@@ -48,15 +48,15 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#projectmodule" aria-expanded="true"
-          aria-controls="projectmodule">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productmodule" aria-expanded="true"
+          aria-controls="productmodule">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Project</span>
+          <span>Product</span>
         </a>
-        <div id="projectmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="productmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Add Project</a>
-            <a class="collapse-item" href="">All Project</a>
+            <a class="collapse-item" href="{{route('addProduct')}}">Add Product</a>
+            <a class="collapse-item" href="">All Product</a>
           </div>
         </div>
       </li>

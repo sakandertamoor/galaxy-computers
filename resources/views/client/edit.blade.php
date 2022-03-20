@@ -79,12 +79,7 @@
                             <label>Address</label>
                             <textarea type="text" rows="5" class="form-control @error('address') is-invalid @enderror"   name="address"><?php echo $client->address ?></textarea>
                           </div>
-                        <div>
-                            <img src="" id="blah" class="w-100 pb-2 ml-0" style="max-width: 100px">
-                        </div>
-
                         <button type="submit" name="submitButton" style="float: right" class="btn btn-primary ">Save</button>
-
                     </form>
                 </div>
             </div>

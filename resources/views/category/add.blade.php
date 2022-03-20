@@ -41,10 +41,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <div>
-                            <img src="" id="blah" class="w-100 pb-2 ml-0" style="max-width: 100px">
-                        </div>
-
                         <button type="submit" name="submitButton" style="float: right" class="btn btn-primary ">Save</button>
 
                     </form>

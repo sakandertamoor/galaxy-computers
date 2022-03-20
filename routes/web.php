@@ -39,7 +39,7 @@ Route::controller(ClientController::class)->group( function(){
 Route::controller(ProductController::class)->group( function(){
     Route::get('/addProduct','create')->name('addProduct');
     Route::post('/storeProduct','store')->name('storeProduct');
-    // Route::get('/allClient','index')->name('Client');
+    Route::get('/allProduct','index')->name('Product');
     // Route::get('/client/{client}/edit','edit')->name('editClient');
     // Route::put('/updateClient/{client}','update')->name('updateClient');
 });

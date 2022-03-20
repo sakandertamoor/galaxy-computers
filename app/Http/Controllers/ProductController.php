@@ -29,9 +29,16 @@ class ProductController extends Controller
                 'image' => basename($path)
             ]);
         }
-        return  $result ? redirect('allProduct')->with('success', 'Product has been created successfully.') : redirect('allProduct')->with('error', 'Something went Wrong.');
+        return  $result ? redirect('allProduct')->with('success', 'Product has been created successfully.') : redirect('allProduct')->with('error', 'Something went Wrong.');  
+    }
 
-
-      
+    public function index(Request $request)
+    {
+        if ($request->ajax())
+         {
+            $product = Product::all();
+           // return clientTable($product);
+        }
+        return view('product.all');
     }
 }

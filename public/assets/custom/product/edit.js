@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 name: {
                     validators: {
                         notEmpty: {
-                            message: 'First name is required'
+                            message: 'Name is required'
                         },
                         regexp: {
                             regexp: /^[a-zA-Z ]*$/,
@@ -42,15 +42,25 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 quantity: {
                     validators: {
                         notEmpty: {
-                            message: 'Internal rate is required'
+                            message: 'Quantity is required'
                         },
                         numeric: {
-                            message: 'Internal rate must be in numbers'
+                            message: 'Quantity must be in numbers'
                         },
                         between: {
                             min: 0,
                             max: 10000,
-                            message: 'Internal rate must be between 0 to 10000'
+                            message: 'Quantity must be between 0 to 10000'
+                        }
+                    }
+                },
+                price: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Price is required'
+                        },
+                        numeric: {
+                            message: 'Price must be in numbers'
                         }
                     }
                 },

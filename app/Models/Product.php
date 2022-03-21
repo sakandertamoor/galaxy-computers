@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['category_id', 'name', 'quantity','image'];
+    protected $fillable = ['category_id', 'name', 'price','quantity','image'];
 
     public function category()
     {
@@ -35,6 +35,7 @@ class Product extends Model
             'products.name as name',
             'products.quantity as quantity',
             'products.image as image',
+            'products.price as price',
             'category.category_name as category_name',
             'products.status as status'
         );

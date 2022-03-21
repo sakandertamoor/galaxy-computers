@@ -26,6 +26,7 @@ class ProductController extends Controller
             $result = Product::create([
                 'category_id' => $product['category'],
                 'name' => $product['name'],
+                'price' => $product['price'],
                 'quantity' => $product['quantity'],
                 'image' => basename($path)
             ]);
@@ -55,6 +56,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'category' => 'required',
             'name' => 'required',
+            'price' => 'required',
             'quantity' => 'required',
             'status' => 'required'
         ]);
@@ -70,6 +72,7 @@ class ProductController extends Controller
                 'category_id' => $request->category,
                 'name' => $request->name,
                 'quantity' => $request->quantity,
+                'price' => $request->price,
                 'image' => !empty($imagePath) ? basename($imagePath) : $product->image,
                 'status' => $request->status
             ]);

@@ -6,7 +6,7 @@
           </button>
 
           <!-- Topbar Navbar -->
-          <a class="navbar-brand" href="#"><h1 class="h3 mb-0 text-gray-800" style="font-weight: bolder;">Galaxy Computer</h1></a>
+          <a class="navbar-brand" href="{{ url('/') }}"><h1 class="h3 mb-0 text-gray-800" style="font-weight: bolder;">Galaxy Computer</h1></a>
           <ul class="navbar-nav ml-auto">
 
 

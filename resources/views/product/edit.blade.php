@@ -57,6 +57,21 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label">{{ __('Price') }}</label>
+                            <div class="">
+                                <input id="price" type="text"
+                                       class="form-control @error('price') is-invalid @enderror" name="price"
+                                       value="{{ old('price') ?? $product->price }}" autocomplete="price" 
+                                       placeholder="Price">
+
+                                @error('price')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label class="control-label">{{ __('Category') }}</label>

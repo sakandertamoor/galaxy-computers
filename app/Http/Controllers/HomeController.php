@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 
@@ -15,9 +16,9 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function Home(Request $request)
+    public function Home()
     {
-        $product = Product::getProductWithCategory();
-        return view('home', compact('category'));
+        $products = Product::getProductDetailsWithCategory()->get();
+        return view('home', compact('products'));
     }
 }

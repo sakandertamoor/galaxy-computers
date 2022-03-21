@@ -27,4 +27,16 @@ class Product extends Model
             'products.status as status'
         );
     }
+    public function getProductDetailsWithCategory(){
+        return $data = DB::table('products')
+        ->join('category', 'products.category_id', '=', 'category.id')
+        ->select(
+            'products.id as id',
+            'products.name as name',
+            'products.quantity as quantity',
+            'products.image as image',
+            'category.category_name as category_name',
+            'products.status as status'
+        );
+    }
 }

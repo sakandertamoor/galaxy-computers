@@ -13,7 +13,10 @@ cp .env.example .env
 ```
 
 Add Database credentials and Database name in `.env` file.
+
+
 ![image](https://user-images.githubusercontent.com/7387606/159254874-46becbed-8320-4771-827e-e165c1f49d61.png)
+
 
 
 Run the following command to generate your app key:

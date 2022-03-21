@@ -56,7 +56,7 @@
         <div id="productmodule" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('addProduct')}}">Add Product</a>
-            <a class="collapse-item" href="">All Product</a>
+            <a class="collapse-item" href="{{route('Product')}}">All Product</a>
           </div>
         </div>
       </li>

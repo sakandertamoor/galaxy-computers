@@ -41,3 +41,21 @@ if (!function_exists('clientTable')) {
                     ->make(true);
     }
 }
+
+if (!function_exists('prodcutTable')) {
+    function prodcutTable($product)
+    {
+        return datatables($product)
+                ->setRowClass('clickable-row')
+                    ->setRowAttr([
+                        'data-href' => function($product){
+                            return route('editProduct', $product->id);
+                        }
+                        ])
+                        ->addColumn('status', function($product){
+                            return renderStatus($product);
+                       })
+                       ->rawColumns(['status'])
+                    ->make(true);
+    }
+}

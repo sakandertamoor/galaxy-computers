@@ -40,6 +40,6 @@ Route::controller(ProductController::class)->group( function(){
     Route::get('/addProduct','create')->name('addProduct');
     Route::post('/storeProduct','store')->name('storeProduct');
     Route::get('/allProduct','index')->name('Product');
-    // Route::get('/client/{client}/edit','edit')->name('editClient');
-    // Route::put('/updateClient/{client}','update')->name('updateClient');
+    Route::get('/product/{product}/edit','edit')->name('editProduct');
+    Route::put('/updateProduct/{product}','update')->name('updateProduct');
 });

@@ -15,4 +15,8 @@ class Category extends Model
     {
         return Category::where('status', '1')->get(['id','category_name']);
     }
+    public function products()
+    {
+          return $this->hasMany('App\Models\Product');
+    }
 }

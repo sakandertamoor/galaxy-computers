@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Models\Product;
 
@@ -21,7 +22,7 @@ class ProductController extends Controller
     {
         $product = $request->validated();
         if($product){
-            $path = $request->file('image')->store('uploads/products/images/');
+            $path = $request->file('image')->store('uploads/products/images/', 'public');
             $result = Product::create([
                 'category_id' => $product['category'],
                 'name' => $product['name'],
@@ -36,9 +37,43 @@ class ProductController extends Controller
     {
         if ($request->ajax())
          {
-            $product = Product::all();
-           // return clientTable($product);
-        }
+            $product = Product::getProductWithCategory();
+             return prodcutTable($product);
+        }   
         return view('product.all');
+    }
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::getCategory();
+        return view('product.edit', compact('product', 'categories'));
+    }
+
+    public function update(Product $product, Request $request)
+    {
+        
+        $validator = Validator::make($request->all(), [
+            'category' => 'required',
+            'name' => 'required',
+            'quantity' => 'required',
+            'status' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        if ($request->file('image')) {
+            $imagePath = $request->file('image')->store('uploads/products/images/', 'public');
+            }
+            $result = Product::where('id', $product->id)->update([
+                'category_id' => $request->category,
+                'name' => $request->name,
+                'quantity' => $request->quantity,
+                'image' => !empty($imagePath) ? basename($imagePath) : $product->image,
+                'status' => $request->status
+            ]);
+   
+        return  $result ? redirect('allProduct')->with('success', 'Product has been Updated successfully.') : redirect('allProduct')->with('error', 'Something went Wrong.');
     }
 }

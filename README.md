@@ -44,3 +44,8 @@ Then start your server:
 php artisan serve
 ```
 
+artisan help command
+```
+php artisan --help
+```
+
